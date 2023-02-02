@@ -1,10 +1,12 @@
+import AddArticle from "../organisms/AddArticle"
+
 const AddPage = () => {
 
     return (
 
-        <>
-        <h1>Add a new Article</h1>
-        </>
+        <div id="addArticlePage">
+            <AddArticle />
+        </div>
     )
 }
 

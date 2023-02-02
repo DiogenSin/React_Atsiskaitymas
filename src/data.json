@@ -26,6 +26,11 @@
       "title": "Article title 3",
       "text": "This is the last article to make sure that content was generated from JSON.",
       "id": "3"
+    },
+    {
+      "id": "-ZDK7SCstxF3fi0UqR4S4",
+      "title": "This is the newly added Article",
+      "text": "I am proud to announce, that I finnaly managed to add a new article without getting an error message."
     }
   ]
 }

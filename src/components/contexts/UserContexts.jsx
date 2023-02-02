@@ -39,14 +39,15 @@ const UserProvider = ({children}) => {
         const regVerification = userList.find(user => user.email === regData.email)
         if(regVerification){
             setUserExists(true)
-            console.log('Vartotojas jau egzistuoja')
         } else {
+
             setLoggedIn(true)
             setUserList(...userList, {
                 email:regData.email,
                 password:regData.password,
                 id:regData.id
             })
+            
             navigate('/home')
 
             fetch('http://localhost:3001/users', {
