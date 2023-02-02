@@ -13,18 +13,18 @@
   ],
   "articles": [
     {
-      "title": "Article title",
+      "title": "Article title 1",
       "text": "This is the sample article text to show how the article card looks like",
       "id": "1"
     },
     {
-      "title": "Article title",
-      "text": "This is the sample article text to show how the article card looks like",
+      "title": "Article title 2",
+      "text": "This is another simple article text to show that I am able to generate content from JSON.",
       "id": "2"
     },
     {
-      "title": "Article title",
-      "text": "This is the sample article text to show how the article card looks like",
+      "title": "Article title 3",
+      "text": "This is the last article to make sure that content was generated from JSON.",
       "id": "3"
     }
   ]
