@@ -1,8 +1,13 @@
+import LoginForm from "../organisms/LoginForm"
+
 const Login = () => {
 
     return (
         <>
-            <h1>Login</h1>
+            <div id="loginPage">
+                <LoginForm />
+            </div>
+
         </>
     )
 }

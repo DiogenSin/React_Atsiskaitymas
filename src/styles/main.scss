@@ -26,6 +26,30 @@ header {
 
 }
 
+main {
+    display: flex;
+    padding: 50px 10vw;
+    justify-content: center;
+
+    #loginPage {
+        width: 350px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid black;
+            gap: 15px;
+
+            h1 {
+                margin: 0px;
+            }
+        }
+    }
+}
+
 footer {
     display: flex;
     padding: 30px 10vw;

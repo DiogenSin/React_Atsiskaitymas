@@ -17,7 +17,7 @@ const Footer = () => {
             <li><NavLink to="/articles">Articles</NavLink></li>
             <li><NavLink to="/new-Article">Add an Article</NavLink></li>
         </ul>
-        <iframe class="gmap_iframe" frameborder="0" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=Negros&amp;t=p&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+        <iframe className="gmap_iframe" src="https://maps.google.com/maps?width=200&amp;height=200&amp;hl=en&amp;q=Negros&amp;t=p&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
         </footer>
         </>
     )
