@@ -45,6 +45,13 @@ main #loginPage form, main #registrationPage form {
 main #loginPage form h1, main #registrationPage form h1 {
   margin: 0px;
 }
+main #loginPage form label, main #registrationPage form label {
+  display: flex;
+  flex-direction: column;
+}
+main #loginPage form label span, main #registrationPage form label span {
+  color: rgb(204, 68, 68);
+}
 main #loginPage form button, main #loginPage form input, main #registrationPage form button, main #registrationPage form input {
   width: 200px;
   box-sizing: border-box;
@@ -59,6 +66,10 @@ main #loginPage form button:hover, main #registrationPage form button:hover {
   background-color: rgb(0, 0, 0);
   color: white;
   cursor: pointer;
+}
+main #loginPage form #loginFailed, main #registrationPage form #loginFailed {
+  color: rgb(204, 68, 68);
+  font-weight: bold;
 }
 
 footer {

@@ -1,8 +1,12 @@
 import * as Yup from 'yup'
 import { Formik, Form, Field } from 'formik'
 import { useState } from "react"
+import { useContext } from 'react'
+import UserContext from '../contexts/UserContexts'
 
 const LoginForm = () => {
+
+    const { handleLogin, loginFailed } = useContext(UserContext)
 
     const [loginInputs, setLoginInputs] = useState({
         email:"",
@@ -14,13 +18,10 @@ const validationSchema = Yup.object().shape({
         .email('This must be a valid email')
         .required('This must be filled'),
     password: Yup.string()
-        .min(5, 'The password must be at least 5 symbols length')
+        .min(5, 'Enter minimum 5 symbols')
         .required('This must be filled')
 })
 
-const handleSubmit = (e) => {
-    console.log(e)
-}
 
     return (
 
@@ -28,7 +29,7 @@ const handleSubmit = (e) => {
         <Formik
             initialValues={loginInputs}
             validationSchema={validationSchema}
-            onSubmit={handleSubmit}
+            onSubmit={handleLogin}
         >
 
         {({ errors, touched, values, setValues }) => (
@@ -62,6 +63,11 @@ const handleSubmit = (e) => {
                     }
                 </label>
                 <button type='submit'>Login</button>
+                {
+                    loginFailed ?
+                    <p id='loginFailed'>Email or password is incorrect</p>
+                    : null
+                }
             </Form>
         )}
 

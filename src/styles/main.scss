@@ -52,7 +52,14 @@ main {
                 margin: 0px;
             }
 
+            label {
+                display: flex;
+                flex-direction: column;
 
+                span {
+                    color: rgb(204, 68, 68);
+                }
+            }
 
             button, input {
                 width: 200px;
@@ -69,6 +76,11 @@ main {
                 background-color: rgb(0, 0, 0);
                 color: white;
                 cursor: pointer;
+            }
+
+            #loginFailed {
+                color: rgb(204, 68, 68);
+                font-weight: bold;
             }
         }
     }
