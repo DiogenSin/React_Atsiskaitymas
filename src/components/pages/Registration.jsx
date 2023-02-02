@@ -1,8 +1,12 @@
+import RegistrationForm from "../organisms/RegistrationForm"
+
 const Registration = () => {
 
     return (
         <>
-            <h1>Registration</h1>
+            <div id="registrationPage">
+                <RegistrationForm />
+            </div>
         </>
     )
 }
