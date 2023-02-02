@@ -7,7 +7,7 @@ import { nanoid } from 'nanoid'
 
 const RegistrationForm = () => {
 
-    const { handleRegistration } = useContext(UserContext)
+    const { handleRegistration, userExists } = useContext(UserContext)
 
     const [registrationInputs, setregistrationInputs] = useState({
         email:"",
@@ -81,6 +81,11 @@ const validationSchema = Yup.object().shape({
                     }
                 </label>
                 <button type='submit'>Login</button>
+                {
+                    userExists ?
+                    <p id='registrationFailed'>The user is taken</p>
+                    : null
+                }
             </Form>
         )}
 

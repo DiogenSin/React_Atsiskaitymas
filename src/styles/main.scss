@@ -80,7 +80,7 @@ main {
                 cursor: pointer;
             }
 
-            #loginFailed {
+            #loginFailed, #registrationFailed {
                 color: rgb(204, 68, 68);
                 font-weight: bold;
             }
@@ -98,6 +98,34 @@ main {
         }
         .articleCard:hover {
             background-color: rgb(192, 192, 192);
+        }
+    }
+
+    #becomeAMember {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            height: 34px;
+            width: 40%;
+            margin-top: 30px;
+            background-color: white;
+            border: 1px solid black;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+        button:hover {
+            height: 34px;
+            background-color: rgb(0, 0, 0);
+            cursor: pointer;
+
+            a{
+                color: white;
+            }
         }
     }
 }

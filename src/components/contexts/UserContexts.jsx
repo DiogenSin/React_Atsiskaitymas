@@ -17,6 +17,7 @@ const UserProvider = ({children}) => {
         const fetchData = await fetch('http://localhost:3001/users')
         .then (res => res.json())
         setUserList(fetchData)
+
     }
 
     const handleLogin = (loginData) => {
@@ -77,7 +78,8 @@ const UserProvider = ({children}) => {
                 handleLogin,
                 loggedIn,
                 loginFailed,
-                handleRegistration
+                handleRegistration,
+                userExists
             }}
         >
             {children}

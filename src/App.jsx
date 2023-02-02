@@ -8,6 +8,7 @@ import Footer from './components/organisms/Footer';
 import UserContext from './components/contexts/UserContexts';
 import { useContext } from 'react';
 import AddPage from './components/pages/AddPage';
+import BecomeAMember from './components/pages/BecomeAMember';
 
 function App()  {
 
@@ -32,6 +33,7 @@ function App()  {
             <Route path='/add' element={<Login />} />
             <Route path='/login' element={<Login />} />
             <Route path='/registration' element={<Registration />} />
+            <Route path='/become-a-member' element={<BecomeAMember />} />
             </>
           }
           <Route path='/' element={<Login />} />
