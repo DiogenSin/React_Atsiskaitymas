@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserContext = createContext()
 
@@ -8,6 +9,7 @@ const UserProvider = ({children}) => {
     const [userList, setUserList] = useState(null)
     const [loginFailed, setLoginFailed] = useState(false)
 
+    const navigate = useNavigate()
 
     const getUserData = async() => {
 
@@ -21,6 +23,14 @@ const UserProvider = ({children}) => {
         const loginVerification = userList.find(user => user.email === loginData.email && user.password === loginData.password)
         
         loginVerification ? setLoggedIn(true) : setLoginFailed(true)
+
+        if(loginVerification) {
+            setLoggedIn(true)
+            navigate('/home')
+        } else {
+            setLoginFailed(true)
+        }
+
     }
 
 

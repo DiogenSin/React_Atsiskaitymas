@@ -5,9 +5,13 @@ import Login from './components/pages/Login';
 import Registration from './components/pages/Registration'
 import Home from './components/pages/Home'
 import Footer from './components/organisms/Footer';
+import UserContext from './components/contexts/UserContexts';
+import { useContext } from 'react';
+import AddPage from './components/pages/AddPage';
 
 function App()  {
 
+  const { loggedIn } = useContext(UserContext)
 
   return (
     <>
@@ -15,9 +19,20 @@ function App()  {
     <Header />  
     <main>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/registration' element={<Registration />} />
+          {
+            loggedIn ?
+            <>
+            <Route path='/home' element={<Home />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/add' element={<AddPage />} />
+            </>
+            :
+            <>
+            <Route path='/login' element={<Login />} />
+            <Route path='/registration' element={<Registration />} />
+            </>
+          }
+          <Route path='/' element={<Login />} />
           <Route path='*' element={<h1>404 tokio puslapio net nėra</h1>} />
         </Routes>
     </main>
