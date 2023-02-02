@@ -53,7 +53,7 @@ const validationSchema = Yup.object().shape({
                     <Field
                         type="password"
                         name="password"
-                        placeholder=""
+                        placeholder="Password"
                         value={values.password}
                         onChange={(e) => setValues({...values, password: e.target.value})}
                     />

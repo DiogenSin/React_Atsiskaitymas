@@ -1,26 +1,31 @@
 {
-    "users":[{
-        "email":"dovydas@gmail.com",
-        "password":"12345",
-        "id":"1"
-    },{
-        "email":"jonas@gmail.com",
-        "password":"123456",
-        "id":"2"
+  "users": [
+    {
+      "id": "p-L2Yo0DYvrhN1r2821CN",
+      "email": "antanas@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "Gs9hEWtmCGHC6QE_JvVGx",
+      "email": "dovydas@gmail.com",
+      "password": "123456"
     }
-],
-    "articles":[{
-        "title":"Article title",
-        "text":"This is the sample article text to show how the article card looks like",
-        "id":"1"
-    },{
-        "title":"Article title",
-        "text":"This is the sample article text to show how the article card looks like",
-        "id":"2"
-    },{
-        "title":"Article title",
-        "text":"This is the sample article text to show how the article card looks like",
-        "id":"3"
+  ],
+  "articles": [
+    {
+      "title": "Article title",
+      "text": "This is the sample article text to show how the article card looks like",
+      "id": "1"
+    },
+    {
+      "title": "Article title",
+      "text": "This is the sample article text to show how the article card looks like",
+      "id": "2"
+    },
+    {
+      "title": "Article title",
+      "text": "This is the sample article text to show how the article card looks like",
+      "id": "3"
     }
-]
+  ]
 }

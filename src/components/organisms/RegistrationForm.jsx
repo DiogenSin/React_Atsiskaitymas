@@ -1,29 +1,32 @@
 import * as Yup from 'yup'
 import { Formik, Form, Field } from 'formik'
 import { useState } from "react"
+import UserContext from '../contexts/UserContexts'
+import { useContext } from 'react'
+import { nanoid } from 'nanoid'
 
 const RegistrationForm = () => {
 
+    const { handleRegistration } = useContext(UserContext)
+
     const [registrationInputs, setregistrationInputs] = useState({
         email:"",
-        password:""
+        password:"",
+        passwordRepeat: "",
+        id:nanoid()
     })
 
 const validationSchema = Yup.object().shape({
     email: Yup.string()
-        .email('This must be a valid email')
+        .email('Email must be valid')
         .required('This must be filled'),
     password: Yup.string()
-        .min(5, 'The password must be at least 5 symbols length')
+        .min(5, 'Enter at least 5 symbols')
         .required('This must be filled'),
     passwordRepeat: Yup.string()
         .oneOf([Yup.ref('password'), null], 'Passwords must match')
         .required('This must be filled'),
 })
-
-const handleSubmit = (e) => {
-    console.log(e)
-}
 
     return (
 
@@ -31,7 +34,7 @@ const handleSubmit = (e) => {
         <Formik
             initialValues={registrationInputs}
             validationSchema={validationSchema}
-            onSubmit={handleSubmit}
+            onSubmit={handleRegistration}
         >
 
         {({ errors, touched, values, setValues }) => (
@@ -55,7 +58,7 @@ const handleSubmit = (e) => {
                     <Field
                         type="password"
                         name="password"
-                        placeholder=""
+                        placeholder="Password"
                         value={values.password}
                         onChange={(e) => setValues({...values, password: e.target.value})}
                     />
@@ -68,7 +71,7 @@ const handleSubmit = (e) => {
                     <Field
                         type="password"
                         name="passwordRepeat"
-                        placeholder=""
+                        placeholder="Repeat the password"
                         value={values.passwordRepeat}
                         onChange={(e) => setValues({...values, passwordRepeat: e.target.value})}
                     />

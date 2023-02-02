@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 const UserContext = createContext()
 
@@ -8,6 +9,7 @@ const UserProvider = ({children}) => {
     const [loggedIn, setLoggedIn] = useState(false)
     const [userList, setUserList] = useState(null)
     const [loginFailed, setLoginFailed] = useState(false)
+    const [userExists, setUserExists] = useState(false)
 
     const navigate = useNavigate()
 
@@ -33,6 +35,35 @@ const UserProvider = ({children}) => {
 
     }
 
+    const handleRegistration = (regData) => {
+
+        const regVerification = userList.find(user => user.email === regData.email)
+        if(regVerification){
+            setUserExists(true)
+            console.log('Vartotojas jau egzistuoja')
+        } else {
+            setLoggedIn(true)
+            setUserList(...userList, {
+                email:regData.email,
+                password:regData.password,
+                id:regData.id
+            })
+            navigate('/home')
+
+            fetch('http://localhost:3001/users', {
+                method: 'POST',
+                headers: {
+                    'Content-type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    id: regData.id,
+                    email: regData.email,
+                    password: regData.password
+                })
+            })
+        }
+    }
+
 
     useEffect(() => {
         getUserData()
@@ -45,7 +76,8 @@ const UserProvider = ({children}) => {
             value={{
                 handleLogin,
                 loggedIn,
-                loginFailed
+                loginFailed,
+                handleRegistration
             }}
         >
             {children}
