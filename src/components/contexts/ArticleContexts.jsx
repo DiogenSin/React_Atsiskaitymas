@@ -6,6 +6,7 @@ const ArticleContext = createContext()
 const ArticleProvider = ({children}) => {
 
     const [articleList, setArticleList] = useState(null)
+    const [noArticles, setNoArticles] = useState(false)
     const navigate = useNavigate()
 
     const getArticleData = async() => {
@@ -13,6 +14,10 @@ const ArticleProvider = ({children}) => {
         const fetchData = await fetch('http://localhost:3001/articles')
         .then (res => res.json())
         setArticleList(fetchData)
+
+        if(fetchData.length == 0){
+            setNoArticles(true)
+        } else {console.log(fetchData.length)}
     }
 
     const handleAddArticle = (newArticle) => {
@@ -48,7 +53,8 @@ const ArticleProvider = ({children}) => {
         <ArticleContext.Provider
             value={{
                 articleList,
-                handleAddArticle
+                handleAddArticle,
+                noArticles
             }}
         >
             {children}
