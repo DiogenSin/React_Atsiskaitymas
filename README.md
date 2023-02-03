@@ -1,4 +1,4 @@
-# Darbo su atsiskaitymo projektu pradžoa
+# Darbo su atsiskaitymo projektu pradžia
 
 ## 1. Paleisti projektą
 
@@ -22,10 +22,8 @@ Norint peržiūrėti duomenų bazę, naršyklėje, naujame lange nueiti į [http
 
 Norint prisijungti galima naudoti vieną iš žemiau pateiktų prisijungimų:
 
-### `Email: dovydas@gmail.com`
-### `Password: 123456`
+### `Email: dovydas@gmail.com   Password: 123456`
 
-### `Email: antanas@gmail.com`
-### `Password: 123456`
+### `Email: antanas@gmail.com   Password: 123456`
 
 ## 4. Smagaus naudojimo!
