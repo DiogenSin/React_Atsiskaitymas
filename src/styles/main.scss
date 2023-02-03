@@ -4,7 +4,7 @@
 
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 30px 10vw;
     border-bottom: 1px solid gray;
 
@@ -14,8 +14,10 @@ header {
 
     nav ul {
         display: flex;
+        width: 43vw;
         gap: 10px;
         list-style-type: none;
+        padding: 0px;
 
         a {
             text-decoration: none;
